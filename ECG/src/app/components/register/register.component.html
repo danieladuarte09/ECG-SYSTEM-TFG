@@ -1,0 +1,48 @@
+<div class="form-container">
+    <h1 class="ecg-title">Create an account</h1>
+    <form [formGroup]="formData">
+        <div class="mb-2">
+            <label for="text">Name</label>
+            <input
+                formControlName="name"
+                placeholder="Name"
+                class="form-control"
+                type="name"
+            />
+            <label for="text">Last Name</label>
+            <input
+                formControlName="lastName"
+                placeholder="Last Name"
+                class="form-control"
+                type="email"
+            />
+            <label for="email">Email</label>
+            <input
+                formControlName="email"
+                placeholder="Email"
+                class="form-control"
+                type="email"
+            />
+        </div>
+        <div class="mb-2">
+            <label for="password">Password</label>
+            <input
+                formControlName="password"
+                placeholder="Password"
+                class="form-control"
+                type="password"
+            />
+        </div>
+        <button type="submit" class="playbutton"
+            mat-raised-button
+            color="primary"
+            (click)="submitData()">
+            Login
+        </button>
+
+        
+
+    </form>
+
+    
+</div>

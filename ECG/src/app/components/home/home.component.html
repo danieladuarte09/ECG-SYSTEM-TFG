@@ -1,0 +1,71 @@
+<div class="container"> 
+    <!-- Div de bienvenida -->
+    <div class="welcome">
+        <h1>¡Welcome to the Electrocardiogram System!</h1>
+    </div>
+
+
+    <!-- Dashboard del doctor - Lista de pacientes -->
+    <div class="dashboard">
+        <h2>Patient List</h2>
+
+        <!-- Tabla de pacientes -->
+        <table class="patient-table">
+            <thead>
+                <tr>
+                    <th>Patient ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Condition</th>
+                    <th>Actions</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let paciente of patients">
+                    <td>{{ paciente.patientId }}</td>
+                    <td>{{ paciente.patientName }}</td>
+                    <td>{{ paciente.patientAge }}</td>
+                    <td>{{ paciente.patientCondition }}</td>
+                    <td>
+                        <button mat-icon-button color="warn" (click)="deletePatient(paciente)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                 
+                </tr>
+            </tbody>
+        </table>
+      
+    </div>
+
+
+  <!-- Botón de alternancia para mostrar/ocultar formulario -->
+<button type="button" class="toggle-button" (click)="toggleFormVisibility()">
+    {{ mostrarFormulario ? 'Ocultar Formulario' : 'Añadir Paciente' }}
+</button>
+
+<!-- Formulario para añadir paciente -->
+<div class="add-patient-form" *ngIf="mostrarFormulario">
+    <h3>Añadir Paciente</h3>
+    <form [formGroup]="addPatientForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="patientId">Patient ID:</label>
+            <input type="text" id="patientId" formControlName="patientId">
+        </div>
+        <div>
+            <label for="patientName">Name:</label>
+            <input type="text" id="patientName" formControlName="patientName">
+        </div>
+        <div>
+            <label for="patientAge">Age:</label>
+            <input type="number" id="patientAge" formControlName="patientAge">
+        </div>
+        <div>
+            <label for="patientCondition">Condition:</label>
+            <input type="text" id="patientCondition" formControlName="patientCondition">
+        </div>
+        <button type="submit">Add Patient:</button>
+    </form>
+</div>
+</div>

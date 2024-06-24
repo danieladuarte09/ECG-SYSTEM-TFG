@@ -1,0 +1,81 @@
+<h2>Medical History</h2>
+
+<!-- Tabla de pacientes -->
+<div class="table">
+  <h2>Select the patient to access the patient's history</h2>
+  <table class="patient-table">
+    
+    <thead>
+      <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Condition</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let paciente of patients">
+        <td>{{ paciente.patientId }}</td>
+        <td>{{ paciente.patientName }}</td>
+        <td>{{ paciente.patientAge }}</td>
+        <td>{{ paciente.patientCondition }}</td>
+        <td>
+          <button class="select-button" mat-icon-button color="warn" (click)="getEcgData(paciente.patientId)">
+            View details
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Detalles del paciente seleccionado -->
+<!-- Detalles del paciente seleccionado -->
+
+<div *ngIf="selectedPatientEcgData.length > 0" class="table">
+  <h3>Patient's history</h3>
+  
+  <table class="history-table">
+    <thead>
+      <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Condition</th>
+        <th>Notes</th>
+        <th>Date</th>
+        <th>Hour</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ecg of selectedPatientEcgData">
+        <td>{{ ecg.patientId }}</td>
+        <td>{{ ecg.patientName }}</td>
+        <td>{{ ecg.patientAge }}</td>
+        <td>{{ ecg.patientCondition }}</td>
+        <td>{{ ecg.Notes }}</td>
+        <td>{{ ecg.date.date }}</td>
+        <td>{{ ecg.date.hour }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div *ngIf="selectedPatientEcgData.length > 0">
+  
+  <table>
+    
+    <tbody>
+      <tr *ngFor="let ecg of selectedPatientEcgData">
+       
+        <td>
+          <canvasjs-chart [options]="chartOptions" style="height: 400px; width: 100%;"></canvasjs-chart>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

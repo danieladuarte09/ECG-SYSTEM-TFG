@@ -1,0 +1,66 @@
+
+
+/* Estilo de fondo para todo el sidenav */
+.sidenav-container {
+    background-color: rgb(223, 230, 246); /* Color de fondo principal */
+    height: 100%;
+  }
+
+  .active-link {
+    background-color: rgba(0, 0, 0, 0.1); /* Color de fondo cuando el enlace está activo */
+    color: #007bff; /* Color de texto cuando el enlace está activo */
+  }
+  
+  .logout-button {
+    margin-left: auto; /* Mueve el botón a la derecha */
+  }
+
+  
+  /* Estilo para el contenido dentro del sidenav */
+  .mat-sidenav-content {
+    padding: 20px;
+  }
+
+  .custom-sidenav {
+    width: 250px; /* Ancho deseado para el sidenav */
+  }
+  
+  /* Estilo para los elementos de la lista del menú */
+  .mat-nav-list a {
+    text-decoration: none;
+    color: #3f51b5; /* Color de texto azul */
+    font-size: 10px;
+    padding: 10px;
+    display: block;
+  }
+  
+  .mat-nav-list a:hover {
+    background-color: #3f51b5; /* Color de fondo al pasar el mouse */
+  }
+  
+  /* Estilo para el título del menú */
+  .mat-sidenav-header {
+    background-color: #3f51b5; /* Color de fondo del encabezado */
+    color: white; /* Color de texto del encabezado */
+    padding: 16px;
+    font-size: 24px;
+  }
+  
+  //LADO DERECHO
+  /* Estilo para el botón de menú en el contenido principal */
+  mat-toolbar {
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2; /* Asegura que esté por encima del contenido */
+  }
+  
+  mat-toolbar button {
+    color: grey; /* Color del icono del menú */
+  }
+
+  span{
+    margin: 15px;
+  }
+  

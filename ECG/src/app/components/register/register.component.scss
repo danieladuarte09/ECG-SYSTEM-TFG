@@ -1,0 +1,78 @@
+/* Estilos generales */
+body {
+    background-color: #f0f0f0; /* Color de fondo claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Fuente general */
+  }
+  
+  /* Estilo para el contenedor del formulario */
+  .form-container {
+    background-color: white; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+    max-width: 400px; /* Ancho máximo en pantallas grandes */
+    text-align: center; /* Centra el contenido */
+    margin: auto;
+    margin-top: 30px;
+  }
+  
+  /* Estilo para el título de ECG */
+  .ecg-title {
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+    color: #3f51b5; 
+  }
+  
+ 
+  input {
+    width: 95%; /* Ancho completo */
+    padding: 10px;
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    outline: none; 
+  }
+  
+
+  label {
+    display: block;
+    margin-bottom: 5px; 
+    text-align: left; 
+  }
+  
+  /* Estilo para el botón de enviar */
+  button {
+    background-color: #3f51b5;
+    color: white; 
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer; 
+    width: 100%; 
+    font-size: 16px; 
+    margin-top: 10px; 
+    transition: background-color 0.3s; 
+  }
+  
+  button:hover {
+    background-color: rgb(0, 102, 255); /* Color azul más oscuro al pasar el ratón */
+  }
+  
+  /* Responsive para dispositivos más pequeños */
+  @media (max-width: 480px) {
+    .form-container {
+        padding: 15px; 
+    }
+    
+    button {
+        padding: 8px 15px; 
+    }
+  }
+  

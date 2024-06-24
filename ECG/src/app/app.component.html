@@ -1,0 +1,14 @@
+<ng-container *ngIf="authService.isLoggedIn(); else loginTemplate">
+  <app-side-nav-bar></app-side-nav-bar>
+</ng-container>
+
+<ng-template #loginTemplate>
+  <div class="login-content">
+    <app-login></app-login>
+  </div>
+</ng-template>
+
+
+
+
+

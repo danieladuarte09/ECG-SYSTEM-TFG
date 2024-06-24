@@ -1,0 +1,85 @@
+/* Estilos generales para el contenedor de formulario */
+
+
+
+.form-container {
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f7f7f7; 
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+  }
+  
+  /* Estilos para el título */
+  .ecg-title {
+    margin-bottom: 20px; 
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; 
+  }
+  
+  /* Estilos para los campos de entrada */
+  .form-control {
+    width: 95%; /* Ancho completo del contenedor */
+    padding: 10px; /* Espacio interno */
+    margin-bottom: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px; /* Tamaño de fuente ajustado para dispositivos móviles */
+    
+  }
+  
+  
+  /* Estilos para el botón de envío */
+  .playbutton {
+    width: 100%; 
+    padding: 10px;
+    margin-top: 10px; 
+    background-color: #3f51b5; 
+    color: white; 
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 14px; 
+  }
+  
+  /* Estilo para el botón de alternar modos */
+  button {
+    margin-top: 20px; 
+    background-color: transparent; /* Sin fondo */
+    color: #3f51b5; 
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Cambia el color del botón cuando se pasa el ratón */
+  button:hover {
+    color: #84afdd; 
+  }
+  
+  /* Ajustes responsivos */
+  @media (max-width: 400px) {
+    .form-container {
+        padding: 15px; /* Reduce el padding en pantallas más pequeñas */
+    }
+    
+    /* Ajusta el tamaño de la fuente en pantallas más pequeñas */
+    .ecg-title {
+        font-size: 20px;
+    }
+  
+    .form-control {
+        font-size: 12px;
+    }
+  
+    .playbutton {
+        font-size: 12px;
+    }
+  }
+  

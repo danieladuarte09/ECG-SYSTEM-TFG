@@ -1,0 +1,73 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Patient list
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        
+
+        
+        <mat-list-item *ngFor="let patient of patients" >
+          <div class="patient-item">
+          <p>ID: {{ patient.patientId }} - Name: {{ patient.patientName }}</p> 
+          <button class="select-button" (click)="selectPatient(patient)">Select Patient</button>
+        </div>
+        </mat-list-item>
+      
+      </mat-list>
+     
+      
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="selectedPatient">
+    <mat-card-header>
+      <mat-card-title>Patient: {{ selectedPatient.patientName }} (ID: {{ selectedPatient.patientId }})</mat-card-title>
+      <mat-card-subtitle>Status: 
+        <span [ngClass]="{ 'connected': connectionStatus === 'Connected', 'disconnected': connectionStatus === 'Disconnected', 'error': connectionStatus === 'Error' }">
+          {{ connectionStatus }}
+        </span>
+        <p>Current Time: {{ currentTime }}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <canvasjs-chart [options]="chartOptions" style="height: 400px; width: 100%;"></canvasjs-chart>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="startReceivingData()" [disabled]="receivingData">Start Receiving Data</button>
+      <button mat-raised-button color="warn" (click)="stopReceivingData()" [disabled]="!receivingData">Stop Receiving Data</button>
+     
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card *ngIf="selectedPatient">
+    <mat-card-header>
+      <mat-card-title>Doctor's Notes</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Add Note</mat-label>
+        <textarea matInput [(ngModel)]="note" rows="5" placeholder="Enter notes"></textarea>
+      </mat-form-field>
+      
+     
+      <button mat-raised-button color="accent" (click)="AddEcgData()">
+        Save ECG and Note
+      </button>
+      
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="notifications.length > 0" class="notifications">
+    <mat-card-header>
+      <mat-card-title>Notifications</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let notification of notifications">{{ notification }}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,95 @@
+<div class="container"> 
+<div class="form-container">
+    <h1 class="ecg-title">
+        {{ mode === 'login' ? 'ECG Login' : 'Create an Account' }}
+    </h1>
+
+    <form [formGroup]="mode === 'login' ? formDataLogin : formDataRegister">
+        <div class="mb-2">
+            <!-- Campos de formulario para el modo de inicio de sesión -->
+            <div *ngIf="mode === 'login'">
+                <label for="email">Email</label>
+                <input
+                    formControlName="email"
+                    placeholder="Email"
+                    class="form-control"
+                    type="email"
+                />
+                <label for="password">Password</label>
+                <input
+                    formControlName="password"
+                    placeholder="Password"
+                    class="form-control"
+                    type="password"
+                />
+                <button
+                    type="submit"
+                    class="playbutton"
+                    mat-raised-button
+                    color="primary"
+                    (click)="submitDataLogin()"
+                >
+                    Login
+                </button>
+
+                <button
+                type="submit"
+                class="playbutton"
+                mat-raised-button
+                color="primary"
+                (click)="loginWithGoogle()"
+            >
+                Login with Google
+            </button>
+
+            </div>
+
+            <!-- Campos de formulario para el modo de registro -->
+            <div *ngIf="mode === 'register'">
+                <label for="name">Name</label>
+                <input
+                    formControlName="name"
+                    placeholder="Name"
+                    class="form-control"
+                    type="text"
+                />
+                <label for="lastName">Last Name</label>
+                <input
+                    formControlName="lastName"
+                    placeholder="Last Name"
+                    class="form-control"
+                    type="text"
+                />
+                <label for="email">Email</label>
+                <input
+                    formControlName="email"
+                    placeholder="Email"
+                    class="form-control"
+                    type="email"
+                />
+                <label for="password">Password</label>
+                <input
+                    formControlName="password"
+                    placeholder="Password"
+                    class="form-control"
+                    type="password"
+                />
+                <button
+                    type="submit"
+                    class="playbutton"
+                    mat-raised-button
+                    color="primary"
+                    (click)="submitDataRegister()"
+                >
+                    Create Account
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Botón para alternar entre inicio de sesión y registro -->
+    <button (click)="switchMode()">
+        {{ mode === 'login' ? "Don't have an account? Sign up" : 'Already have an account? Login' }}
+    </button>
+</div>
+</div>
